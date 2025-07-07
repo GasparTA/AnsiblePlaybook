@@ -55,7 +55,8 @@ pip install -r requirements.txt
 
 ### ▶️ Running a Playbook
 
-```ansible-playbook -i inventory/hosts.ini playbooks/install_nginx.yml
+```
+ansible-playbook -i inventory/hosts.ini playbooks/install_nginx.yml
 ```
 
 
