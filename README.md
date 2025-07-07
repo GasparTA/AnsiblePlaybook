@@ -1,17 +1,17 @@
-# 📦 Ansible Playbooks – Installation Basique d'Applications
+# 📦 Ansible Playbooks – Basic Application Installation
 
-Bienvenue dans ce dépôt contenant des **playbooks Ansible** pour automatiser l'installation basique d'applications sur vos serveurs.
+Welcome to this repository containing **Ansible playbooks** for automating the basic installation of common applications on servers.
 
-Ce projet vous permet de :
-- Gagner du temps lors de la configuration de nouveaux environnements
-- Standardiser les installations
-- Utiliser un environnement Python propre avec Ansible
+The purpose of this project is to:
+- Save time when provisioning new environments
+- Standardize application setup
+- Use a clean, isolated Python environment with Ansible
 
 ---
 
-## 🚀 Mise en place de l'environnement
+## 🚀 Getting Started
 
-### 1. Créer un environnement virtuel Python
+### 1. Create a Python virtual environment
 
 ```bash
 python3 -m venv ansible
@@ -20,15 +20,44 @@ python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 🔧 Maintenance de l'environnement
+---
 
-Quand l’environnement virtuel est activé :
+### 🔧 Maintain environment
 
+When your virtual environment is active:
 ```bash
-Copier
-Modifier
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
+
+---
+
+### 📁 Project Structure
+
+```
+.
+├── ansible/                 # Virtual environment (not versioned)
+├── playbooks/
+│   ├── install_nginx.yml
+│   ├── install_docker.yml
+│   └── ...
+├── inventory/
+│   └── hosts.ini
+├── roles/
+│   ├── example_role.yml
+├── templates/
+│   └── example.conf.j2
+├── requirements.txt
+└── README.md
+```
+
+---
+
+### ▶️ Running a Playbook
+
+```ansible-playbook -i inventory/hosts.ini playbooks/install_nginx.yml
+```
+
+
 
 
