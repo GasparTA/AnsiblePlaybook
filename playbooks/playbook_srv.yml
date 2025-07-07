@@ -1,0 +1,14 @@
+---
+- name: Base setup for RHEL-based servers
+  hosts: all
+  become: yes
+  vars_files:
+    - ../vars/vars.yml
+
+  tasks:
+    - name: Install base packages
+      ansible.builtin.dnf:
+        name: "{{ base_packages }}"
+        state: present
+      tags: package
+

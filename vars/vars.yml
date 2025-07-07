@@ -1,0 +1,12 @@
+---
+default_user: ansible
+
+base_packages:
+  - vim
+  - curl
+  - wget
+  - git
+  - unzip
+  - tar
+  - sudo
+
