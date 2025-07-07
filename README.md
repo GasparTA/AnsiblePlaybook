@@ -7,6 +7,14 @@ The purpose of this project is to:
 - Standardize application setup
 - Use a clean, isolated Python environment with Ansible
 
+> ⚠️ **Note:** These playbooks are intended for use on real **Red Hat-based operating systems** such as:
+> - Red Hat Enterprise Linux (RHEL)
+> - CentOS
+> - Rocky Linux
+> - AlmaLinux
+
+They may not work properly on non-RHEL-based systems like Debian, Ubuntu, or containers that lack `systemd`.
+
 ---
 
 ## 🚀 Getting Started
