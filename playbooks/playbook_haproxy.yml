@@ -1,0 +1,13 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Deploy your pubkey on the server
+  hosts: all
+  become: yes
+  vars_files:
+    - ../vars/vars.yml
+  tasks:
+    - name: Install haproxy
+      ansible.builtin.dnf:
+        name: haproxy
+        state: present
+      tags: haproxy
