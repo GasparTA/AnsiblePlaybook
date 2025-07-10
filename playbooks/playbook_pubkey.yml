@@ -1,0 +1,26 @@
+---
+- name: Deploy your pubkey on the server
+  hosts: all
+  become: yes
+  vars_files:
+    - ../vars/vars.yml
+  tasks:
+    - name: Read .pub files on your /files/pub_key directory
+      find:
+        paths: "./files/pub_key"
+        patterns: "*.pub"
+      delegate_to: localhost
+      register: pub_keys
+
+    - name: Read content of *.pub files
+      slurp:
+        src: "{{ item.path }}"
+      delegate_to: localhost
+      with_items: "{{ pub_keys.files }}"
+      register: pub_key_contents
+
+    - name: Ajouter les clés au fichier authorized_keys
+      authorized_key:
+        user: ansibleadm
+        key: "{{ item.content | b64decode }}"
+      with_items: "{{ pub_key_contents.results }}"
