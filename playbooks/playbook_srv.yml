@@ -1,3 +1,4 @@
+#!/usr/bin/env ansible-playbook
 ---
 - name: Base setup for RHEL-based servers
   hosts: all
